@@ -1,0 +1,50 @@
+  /* Contenedor principal de gráficos */
+  #graficos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Contenedor individual de gráfico y descripción */
+  .grafico-contenedor {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Gráficos */
+  .grafico {
+    width: 60%;
+    height: 400px;
+  }
+  
+  /* Descripciones */
+  .descripcion {
+    width: 40%;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .descripcion h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .descripcion p {
+    margin-bottom: 10px;
+  }
+  
+  .descripcion ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .descripcion strong {
+    color: #007bff;
+  }

@@ -1,0 +1,47 @@
+.simulacion-explicacion {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simulacion-explicacion h2 {
+  font-size: 30px;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.simulacion-explicacion h3 {
+  font-size: 25px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.simulacion-explicacion p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+.simulacion-explicacion ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.simulacion-explicacion li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.simulacion-explicacion li strong {
+  color: #007bff;
+}

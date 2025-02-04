@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estadisticas</title>
+    <link rel="stylesheet" href="css/Estadis.css" />
+    <link rel="stylesheet" href="css/stylesMain.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script>
+      import { Comprobar_Usu } from "./js/auth.js";
+      Comprobar_Usu();
+    </script>
+  </head>
+  <body>
+    <header>
+      <aside>
+        <img src="" alt="Img_User" id="profile-pic" width="50" height="50" />
+      </aside>
+      <aside>
+        <h1>Bienvenido <span id="span_Nombre_user">---</span></h1>
+      </aside>
+      <nav>
+        <a href="./dashboard.html">Simulación</a>
+        <a href="#">Estadísticas</a>
+        <a href="./About.html">Sobre el Creador</a>
+      </nav>
+      <aside>
+        <button id="logout">Cerrar sesión</button>
+      </aside>
+    </header>
+
+    <main class="content">
+      <h2>Tus Simulaciones</h2>
+      <div id="graficos">
+        <!-- Gráfico 1: Botellas Vendidas vs Defectos -->
+        <div class="grafico-contenedor">
+          <div id="chart_div_botellas" class="grafico"></div>
+          <div class="descripcion">
+            <h3>Botellas Vendidas vs Defectos</h3>
+            <p>
+              Este gráfico compara el número de botellas vendibles con el número
+              de botellas defectuosas en cada simulación. Las botellas
+              defectuosas son aquellas que no cumplen con los estándares mínimos
+              de llenado o tapado.
+              <strong>Fórmula:</strong> Botellas defectuosas = Total de botellas
+              - Botellas vendibles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Gráfico 2: Eficiencia Promedio -->
+        <div class="grafico-contenedor">
+          <div id="chart_div_eficiencia" class="grafico"></div>
+          <div class="descripcion">
+            <h3>Eficiencia Promedio</h3>
+            <p>
+              Este gráfico muestra la eficiencia promedio del proceso de llenado
+              en cada simulación. La eficiencia se calcula como el promedio del
+              nivel de llenado de todas las botellas producidas.
+              <strong>Fórmula:</strong> Eficiencia = (Suma de niveles de llenado
+              / Número de botellas) * 100.
+            </p>
+          </div>
+        </div>
+
+        <!-- Gráfico 3: Ganancias Totales -->
+        <div class="grafico-contenedor">
+          <div id="chart_div_ganancias" class="grafico"></div>
+          <div class="descripcion">
+            <h3>Ganancias Totales</h3>
+            <p>
+              Este gráfico muestra las ganancias generadas por cada simulación.
+              Las ganancias dependen del tamaño de las botellas y su calidad.
+              Solo las botellas correctamente llenadas y tapadas generan
+              ingresos.
+              <strong>Fórmula:</strong> Ganancias = Botellas vendibles * Precio
+              por botella.
+            </p>
+          </div>
+        </div>
+
+        <!-- Gráfico 4: Tasa de Defectos -->
+        <div class="grafico-contenedor">
+          <div id="chart_div_tasa_defectos" class="grafico"></div>
+          <div class="descripcion">
+            <h3>Tasa de Defectos</h3>
+            <p>
+              Este gráfico muestra la tasa de defectos en cada simulación,
+              expresada como un porcentaje. La tasa de defectos indica qué
+              proporción de las botellas producidas no cumple con los estándares
+              de calidad.
+              <strong>Fórmula:</strong> Tasa de defectos = (Botellas defectuosas
+              / Total de botellas) * 100.
+            </p>
+          </div>
+        </div>
+
+        <!-- Gráfico 5: Costo por Botella -->
+        <div class="grafico-contenedor">
+          <div id="chart_div_costo_botella" class="grafico"></div>
+          <div class="descripcion">
+            <h3>Costo Promedio por Botella</h3>
+            <p>
+              Este gráfico muestra el costo promedio de producción por botella,
+              basado en el consumo de energía y agua desperdiciada. Un menor
+              costo por botella indica una mayor eficiencia en el uso de
+              recursos.
+              <strong>Fórmula:</strong> Costo por botella = (Energía consumida +
+              Agua desperdiciada) / Total de botellas.
+            </p>
+          </div>
+        </div>
+
+        <div class="grafico-contenedor">
+          <div id="chart_div_distribucion_tamanos" class="grafico"></div>
+          <div class="descripcion">
+            <h3>Distribución de Tamaños de Botellas</h3>
+            <p>
+              Este gráfico muestra la proporción de botellas pequeñas, medianas
+              y grandes producidas en la última simulación. Los tamaños se
+              clasifican según el ancho de las botellas:
+            </p>
+            <ul>
+              <li><strong>Pequeñas:</strong> Ancho &lt; 20px</li>
+              <li><strong>Medianas:</strong> 20px &leq; Ancho &lt; 30px</li>
+              <li><strong>Grandes:</strong> Ancho &ge; 30px</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Simulador de Embotelladora. Jose Gregorio Briceño.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/Login.js"></script>
+    <script type="module" src="js/estadisticas.js"></script>
+  </body>
+</html>

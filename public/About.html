@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Creador</title>
+    <link rel="stylesheet" href="css/stylesMain.css" />
+    <script>
+      import { Comprobar_Usu } from "./js/auth.js";
+      Comprobar_Usu();
+    </script>
+    <style>
+      main {
+        width: fit-content;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+      main p{
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <aside>
+        <img src="" alt="Img_User" id="profile-pic" width="50" height="50" />
+      </aside>
+      <aside>
+        <h1>Bienvenido <span id="span_Nombre_user">---</span></h1>
+      </aside>
+      <nav>
+        <a href="./dashboard.html">Simulación</a>
+        <a href="./Estadisticas.html">Estadísticas</a>
+        <a href="#">Sobre el Creador</a>
+      </nav>
+      <aside>
+        <button id="logout">Cerrar sesión</button>
+      </aside>
+    </header>
+    <main class="content">
+      <p>Autor: <strong>Jose Gregorio Briceño Romero</strong></p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Simulador de Embotelladora. Jose Gregorio Briceño.</p>
+      </div>
+    </footer>
+    <script type="module" src="js/Login.js"></script>
+  </body>
+</html>

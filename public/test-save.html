@@ -1,0 +1,58 @@
+<!-- test-save.html -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba de Guardado en Firestore</title>
+  </head>
+  <body>
+    <h1>Guardar Datos en Firestore</h1>
+    <button id="save-data">Guardar Simulación</button>
+    <button id="View-data">Ver Simulaciones</button>
+    <div>
+        <a href="./dashboard.html">Atras</a>
+    </div>
+
+    <!-- Importa los scripts -->
+    <script type="module">
+      import { auth } from "./js/firebase-config.js";
+      import { saveSimulationData } from "./js/save-data.js";
+      import { readSimulationData } from "./js/read-data.js";
+
+      document
+        .getElementById("save-data")
+        .addEventListener("click", async () => {
+          const user = auth.currentUser;
+
+          if (user) {
+            // Datos de ejemplo para la simulación
+            const simulationData = {
+              bottlesFilled: 100,
+              timeTaken: 30, // Tiempo en segundos
+              efficiency: 95, // Eficiencia en porcentaje
+            };
+
+            // Guarda los datos en Firestore
+            await saveSimulationData(user.uid, simulationData);
+          } else {
+            alert("Debes iniciar sesión para guardar datos.");
+          }
+        });
+
+      document
+        .getElementById("View-data")
+        .addEventListener("click", async () => {
+          const user = auth.currentUser;
+          if (user) {
+            try {
+              let Datos = await readSimulationData(user.uid);
+              alert(Datos);
+            } catch (error) {}
+          } else {
+            alert("Debes iniciar sesión Ver los datos.");
+          }
+        });
+    </script>
+  </body>
+</html>

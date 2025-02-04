@@ -1,0 +1,53 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Embotelladora</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="container">
+      <h1>Simulador de Embotelladora</h1>
+      <p>Optimiza el proceso de llenado de botellas con nuestra herramienta interactiva.</p>
+    </div>
+  </header>
+
+  <!-- Sección de Resumen/Justificación -->
+  <section class="about">
+    <div class="container">
+      <h2>¿Por qué esta simulación?</h2>
+      <p>
+        Este simulador está diseñado para ayudarte a entender y optimizar el proceso de llenado de botellas de agua. 
+        A través de esta herramienta, podrás simular diferentes escenarios, analizar la eficiencia del sistema y tomar decisiones informadas.
+      </p>
+      <img src="https://www.roagua.com/wp-content/uploads/2023/05/bottled_water_bottling_treatment_1.jpg" alt="Embotelladora" class="about-image">
+    </div>
+  </section>
+
+  <!-- Botón de Inicio de Sesión -->
+  <section class="login">
+    <div class="container">
+      <button id="google-signin">Iniciar sesión con Google</button>
+    </div>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Simulador de Embotelladora. Jose Gregorio Briceño.</p>
+    </div>
+  </footer>
+
+  <!-- Importa los scripts -->
+  <script type="module" src="js/auth.js"></script>
+  <script type="module">
+    document.getElementById("google-signin").addEventListener("click", () => {
+      import("./js/auth.js").then(module => module.signInWithGoogle());
+    });
+  </script>
+</body>
+</html>

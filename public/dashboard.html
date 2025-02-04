@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Principal</title>
+    <link rel="stylesheet" href="css/stylesMain.css" />
+    <link rel="stylesheet" href="css/Simulacion.css" />
+    <link rel="stylesheet" href="css/Expli.css" />
+    <script type="module">
+      import { Comprobar_Usu } from "./js/auth.js";
+      Comprobar_Usu();
+    </script>
+  </head>
+  <body>
+    <header>
+      <aside>
+        <img src="" alt="Img_User" id="profile-pic" width="50" height="50" />
+      </aside>
+      <aside>
+        <h1>Bienvenido <span id="span_Nombre_user">---</span></h1>
+      </aside>
+      <nav>
+        <a href="#">Simulación</a>
+        <a href="./Estadisticas.html">Estadísticas</a>
+        <a href="./About.html">Sobre el Creador</a>
+      </nav>
+      <aside>
+        <button id="logout">Cerrar sesión</button>
+      </aside>
+    </header>
+
+    <article class="simulacion-explicacion">
+      <h2>¡Bienvenido a la Simulación de Embotelladora!</h2>
+      <p>
+        ¿Alguna vez te has preguntado cómo funciona el proceso de llenado y
+        tapado de botellas en una línea de producción? Esta herramienta
+        interactiva te permite explorar y optimizar este proceso, simulando
+        diferentes escenarios para mejorar la eficiencia, reducir costos y
+        minimizar desperdicios. A continuación, encontrarás una descripción
+        detallada de los datos que se muestran en tiempo real durante la
+        simulación.
+      </p>
+
+      <h3>¿Qué significan los datos?</h3>
+      <ul>
+        <li>
+          <strong>Botellas totales:</strong> Este número representa la cantidad
+          total de botellas que han pasado por la línea de producción. Cada
+          botella generada contribuye a este contador, independientemente de su
+          calidad o estado final.
+        </li>
+        <li>
+          <strong>Botellas vendidas:</strong> Aquí verás cuántas botellas han
+          cumplido con los estándares de calidad necesarios para ser
+          consideradas aptas para la venta. Solo las botellas correctamente
+          llenadas y tapadas cuentan como "vendibles".
+        </li>
+        <li>
+          <strong>Agua desperdiciada (L):</strong> Este valor refleja la
+          cantidad de agua que se pierde durante el proceso de llenado. Un nivel
+          de llenado insuficiente o inestable puede aumentar este número,
+          afectando tanto el costo operativo como el impacto ambiental.
+        </li>
+        <li>
+          <strong>Eficiencia promedio (%):</strong> La eficiencia es clave en
+          cualquier línea de producción. Este porcentaje mide qué tan bien se
+          están llenando las botellas en comparación con el nivel ideal. Una
+          mayor eficiencia significa menos desperdicio y mayores ganancias.
+        </li>
+        <li>
+          <strong>Vatios consumidos (W):</strong> La energía eléctrica es un
+          recurso valioso. Este contador muestra cuánta energía se ha utilizado
+          durante el proceso de llenado y tapado. Optimizar este valor puede
+          reducir costos operativos significativamente.
+        </li>
+        <li>
+          <strong>Ganancias totales ($):</strong> Este es el dinero generado por
+          las botellas vendibles. Las ganancias dependen del tamaño de las
+          botellas (más grandes = más caras) y de su calidad. ¡Mejora tu
+          eficiencia para maximizar tus ingresos!
+        </li>
+        <li>
+          <strong>Tiempo operativo:</strong> El tiempo transcurrido desde que
+          iniciaste la simulación. Observa cómo los cambios en la configuración
+          afectan los resultados en diferentes lapsos.
+        </li>
+        <li>
+          <strong>Botellas/min:</strong> Este indicador mide la velocidad de
+          producción. Cuantas más botellas puedas producir por minuto, mayor
+          será tu capacidad de satisfacer la demanda del mercado.
+        </li>
+        <li>
+          <strong>Defectos:</strong> Este contador registra cuántas botellas no
+          cumplen con los estándares mínimos de calidad. Reducir los defectos es
+          esencial para mejorar la eficiencia y reducir pérdidas.
+        </li>
+        <li>
+          <strong>Uso de capacidad (%):</strong> Este porcentaje indica qué tan
+          ocupada está tu línea de producción. Mantener una alta utilización de
+          capacidad sin comprometer la calidad es un desafío clave en la
+          optimización industrial.
+        </li>
+      </ul>
+
+      <p>
+        ¡Ahora que conoces todos los detalles, es hora de poner en marcha la
+        simulación! Experimenta con diferentes configuraciones, observa cómo
+        cambian los datos y descubre cómo pequeños ajustes pueden tener un gran
+        impacto en la eficiencia y rentabilidad de tu línea de producción.
+        ¡Diviértete explorando y optimizando!
+      </p>
+    </article>
+
+    <main>
+      <section>
+        <div id="Contenedor_Simu">
+          <div id="Linea_Maquinas">
+            <div id="Maquina_LLenado"></div>
+            <div id="Maquina_Tapado"></div>
+          </div>
+          <div id="Linea_Botellas"></div>
+          <div id="Linea_Cinta">
+            <div id="Cinta"></div>
+          </div>
+        </div>
+
+        <section class="Control">
+          <button id="btn_Ini">Iniciar</button>
+          <button id="btn_Stop">Pausar</button>
+          <button id="btn_Save">Reiniciar Y Enviar Datos</button>
+        </section>
+      </section>
+
+      <aside id="Datos">
+        <h2>Datos de Simulación</h2>
+        <p>Botellas totales: <span id="botellas-totales">0</span></p>
+        <p>Botellas vendidas: <span id="botellas-vendidas">0</span></p>
+        <p>Agua desperdiciada: <span id="agua-desperdiciada">0</span>L</p>
+        <p>Eficiencia promedio: <span id="eficiencia">0</span>%</p>
+        <p>Vatios consumidos: <span id="vatios">0</span>W</p>
+        <p>Ganancias totales: $<span id="ganancias">0</span></p>
+        <p>Tiempo operativo: <span id="tiempo">00:00</span></p>
+        <p>Botellas/min: <span id="botellas-minuto">0</span></p>
+        <p>Defectos: <span id="defectos">0</span></p>
+        <p>Uso de capacidad: <span id="capacidad">0</span>%</p>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Simulador de Embotelladora. Jose Gregorio Briceño.</p>
+      </div>
+    </footer>
+
+    <!-- Importa los scripts -->
+    <script type="module" src="./js/Simu.js"></script>
+    <script type="module" src="./js/Login.js"></script>
+  </body>
+</html>
