@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre Creador</title>
+    <title>Sobre Creadores</title>
     <link rel="stylesheet" href="css/stylesMain.css" />
     <script>
       import { Comprobar_Usu } from "./js/auth.js";
@@ -15,10 +15,12 @@
         margin: auto;
         display: flex;
         align-items: center;
-      }
-      main p{
         font-size: 25px;
       }
+      aside {
+        margin: 10px;
+      }
+      
     </style>
   </head>
   <body>
@@ -32,19 +34,29 @@
       <nav>
         <a href="./dashboard.html">Simulación</a>
         <a href="./Estadisticas.html">Estadísticas</a>
-        <a href="#">Sobre el Creador</a>
+        <a href="#">Sobre los Creadores</a>
       </nav>
       <aside>
         <button id="logout">Cerrar sesión</button>
       </aside>
     </header>
     <main class="content">
-      <p>Autor: <strong>Jose Gregorio Briceño Romero</strong></p>
+      <aside><p>Autores:</p></aside>
+      <ul>
+        <li><strong>Jose Gregorio Briceño Romero</strong></li>
+        <li><strong>Samuel Yañez</strong></li>
+      </ul>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2025 Simulador de Embotelladora. Jose Gregorio Briceño.</p>
+        <aside>
+          <p>&copy; 2025 Simulador de Embotelladora.</p>
+        </aside>
+        <ul>
+          <li>Jose Gregorio Briceño.</li>
+          <li>Samuel Yañez.</li>
+        </ul>
       </div>
     </footer>
     <script type="module" src="js/Login.js"></script>
